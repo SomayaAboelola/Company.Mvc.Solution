@@ -1,0 +1,31 @@
+﻿@model EmployeeVM
+@{
+    ViewData["Title"] = "Create";
+  
+}
+<div class="alert alert-danger ">
+    <h3>@ViewBag.Message</h3>
+</div>
+
+<h1>Create New Employee</h1>
+
+<form method="post" asp-action="Create" asp-controller="Employee" enctype="multipart/form-data">
+
+    <partial name="PartialViews/CreateEditPartialView" />
+
+    <input type="submit" value="submit" class="btn btn-primary mt-5" />
+    <a asp-action="Index" class="btn btn-warning mt-5">Back To List</a>
+    
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
+
+
+
+

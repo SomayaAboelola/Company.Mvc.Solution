@@ -1,0 +1,55 @@
+﻿@model EmployeeVM
+@if (Model.ImageURL is not null)
+{
+    <div class="form-control">
+
+        <img src="~/Files/image/@Model.ImageURL" class="image-circle" height="40" width="40" alt="Employee image" />
+
+    </div>
+}
+<div class="form-group">
+    <label class="col-form-label" asp-for="Name"></label>
+    <input readonly class="form-control" asp-for="Name" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="Salary"></label>
+    <input readonly class="form-control" asp-for="Salary" />
+    <span asp-validation-for="Salary" class="text-danger"></span>
+</div>
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="Address"></label>
+    <input readonly class="form-control" asp-for="Address" />
+    <span asp-validation-for="Address" class="text-danger"></span>
+</div>
+<div class="form-group">
+    <label class="col-form-label" asp-for="Email"></label>
+    <input readonly class="form-control" asp-for="Email" />
+    <span asp-validation-for="Email" class="text-danger"></span>
+</div>
+
+
+<div class="form-group">
+    <label class="col-form-label" asp-for="HireDate"></label>
+    <input readonly class="form-control" asp-for="HireDate" />
+    <span asp-validation-for="HireDate" class="text-danger"></span>
+</div>
+
+
+<div class="form-group">
+
+    <label asp-for="@Model.DepartmentId" class="col-form-label"></label>
+    <input readonly asp-for="@Model.DepartmentId" asp-items="Departments" class="form-control" />
+
+    <span asp-validation-for="@Model.DepartmentId" class="text-danger"></span>
+</div>
+
+
+
+<div class="form-group">
+    <input readonly class="form-check-input" asp-for="@Model.IsActive" />
+    <label class="form-check-label" asp-for="@Model.IsActive">
+    </label>
+</div>
